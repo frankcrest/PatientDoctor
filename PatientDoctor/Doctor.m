@@ -36,8 +36,10 @@
         for (NSString* symptom in patient.symptoms) {
             if ([symptom isEqualToString:@"Cold"]) {
                 [prescriptions addObject:@"Tylenol"];
+                [patient.symptoms removeObject:@"Cold"];
             } else if ([symptom isEqualToString:@"Fever"]){
                 [prescriptions addObject:@"SuperDrug"];
+                [patient.symptoms removeObject:@"Fever"];
             }
         }
         for (NSString* prescription in prescriptions) {
